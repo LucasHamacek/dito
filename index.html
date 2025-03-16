@@ -10,13 +10,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @font-face {
-            font-family: 'Cooper Light';
-            src: url('fonts/Cooper\ Light\ BT.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        @font-face {
             font-family: 'Cooper Medium';
             src: url('fonts/Cooper\ Medium\ BT.otf') format('truetype');
             font-weight: normal;
@@ -29,16 +22,24 @@
     <header class="flex flex-col items-center w-full">
         <nav class="flex w-full justify-between max-w-2xl py-2 px-4">
             <h1 class="font-medium text-2xl md:text-3xl text-center antialiased">dito.</h1>
+            <a href="#contact"><button
+                class="flex items-center text-sm md:text-base text-white w-fit gap-1 bg-black px-4 py-2 rounded-full">Contato
+            </button></a>
         </nav>
+        <div class="flex flex-col w-full justify-center max-w-2xl py-4 px-4">
+            <h2 class="font-['Cooper_Medium'] text-3xl md:text-4xl text-center antialiased">O sucesso do seu vídeo
+                está nos
+                detalhes.</h2>
+            <p class="text-base md:text-lg text-center antialiased">Deixe suas transcrições impecáveis com o toque
+                humano que elas merecem.</p>
+        </div>
         <img class="flex w-full max-w-2xl px-4"
             src="https://raw.githubusercontent.com/LucasHamacek/dito/refs/heads/main/hand-typing-buttons-keyboard.png"
             alt="hand-typing">
-        <div class="flex w-full justify-center max-w-2xl py-4 px-4">
-            <h2 class="font-['Cooper_Medium'] text-3xl md:text-4xl text-center antialiased">O sucesso do seu vídeo
-                está nos
-                detalhes. Deixe suas transcrições impecáveis com o toque humano que elas merecem.</h2>
-        </div>
     </header>
+    <div class="flex flex-col items-center w-full px-4 py-6">
+        <hr class="w-full max-w-2xl border-t border-gray-300">
+    </div>
     <main>
         <section class="flex flex-col items-center w-full">
             <!-- ADD CONTENT CREATOR NAME -->
@@ -80,7 +81,7 @@
             </div>
             <!-- ADD DOWNLOAD ALTERNATIVE LINK  -->
             <div class="flex w-full justify-center max-w-2xl py-4 px-4">
-                <p class="text-sm text-center text-gray-400 font-light antialiased">*As transcrições são fornecidas em
+                <p class="text-xs md:text-sm text-center text-gray-400 font-light antialiased">*As transcrições são fornecidas em
                     arquivos .srt, compatíveis com diversas plataformas de vídeo, incluindo o YouTube. Caso o download
                     não inicie, clique <a class="text-black underline" href="">aqui</a>.</p>
             </div>
@@ -92,7 +93,8 @@
             <div class="flex flex-col w-full justify-center max-w-2xl py-4 px-4 gap-4">
                 <h3 class="font-['Cooper_Medium'] text-3xl md:text-4xl text-center antialiased">Descubra as vantagens
                     de fazer sua
-                    transcrição com a <span class="font-sans font-medium text-4xl border-b-[5px] border-[#ffb9c7]">dito</span>.
+                    transcrição com a <span
+                        class="font-sans font-medium text-4xl border-b-[5px] border-[#ffb9c7]">dito</span>.
                 </h3>
                 <p class="text-base md:text-lg text-center antialiased">Diferenças entre a transcrição automática do
                     YouTube e nossa versão IA com um toque humano:</p>
@@ -208,7 +210,7 @@
                     </tbody>
                 </table>
                 <div class="flex flex-col w-full justify-center max-w-2xl pb-4 py-4 px-4 gap-4">
-                    <p class="text-sm text-center text-gray-400 font-light antialiased">**Utilizamos o guia TED
+                    <p class="text-xs md:text-sm text-center text-gray-400 font-light antialiased">**Utilizamos o guia TED
                         Translators como
                         referência porque ele é reconhecido mundialmente por suas diretrizes claras e eficientes. Isso
                         garante que suas legendas não apenas sigam padrões globais, mas também proporcionem uma
@@ -268,7 +270,7 @@
             <div class="flex flex-col w-full items-center max-w-2xl py-4 px-4">
                 <div class="flex flex-col w-full max-w-xs py-8 px-8 gap-4 bg-white shadow-xl">
                     <div class="flex flex-col gap-1">
-                        <h4 class="font-['Cooper_Light'] text-2xl md:text-3xl font-medium antialiased">Um locutor</h4>
+                        <h4 class="font-['Cooper_Medium'] text-2xl md:text-3xl font-medium antialiased">Um locutor</h4>
                         <p class="text-base md:text-lg text-gray-400 antialiased">Promoção exclusiva para criadores do
                             YouTube.</p>
                     </div>
@@ -285,10 +287,10 @@
                             class="text-sm md:text-base text-white w-full bg-black px-4 py-2 rounded-full">Solicitar
                             orçamento</button></a>
                     <div class="font-light">
-                        <p class="text-sm text-gray-400 antialiased">1. Os valores podem sofrer alterações sem aviso.
+                        <p class="text-xs md:text-sm text-gray-400 antialiased">1. Os valores podem sofrer alterações sem aviso.
                         </p>
-                        <p class="text-sm text-gray-400 antialiased">2. Para mais de um locutor, consulte os preços.</p>
-                        <p class="text-sm text-gray-400 antialiased">3. Se não estiver satisfeito com o serviço,
+                        <p class="text-xs md:text-sm text-gray-400 antialiased">2. Para mais de um locutor, consulte os preços.</p>
+                        <p class="text-xs md:text-sm text-gray-400 antialiased">3. Se não estiver satisfeito com o serviço,
                             solicite seu reembolso em até sete dias após o
                             recebimento.</p>
                     </div>
