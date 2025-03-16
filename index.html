@@ -1,609 +1,300 @@
-<!doctype html>
-<html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Dito - Transcrição rápida com um toque humano</title>
-  <link rel="icon" type="image/x-icon"
-    href="https://raw.githubusercontent.com/LucasHamacek/dito/refs/heads/main/ico-dito.ico">
-  <style media="all" type="text/css">
-    @font-face {
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 300;
-      font-display: swap;
-      src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_fjbvMwCp50vDAa1ZL7.woff2) format('woff2');
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-    }
-
-    @font-face {
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 400;
-      src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_fjbvMwCp504jAa1ZL7.woff2) format('woff2');
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-    }
-
-    @font-face {
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 500;
-      font-display: swap;
-      src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_fjbvMwCp500DAa1ZL7.woff2) format('woff2');
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-    }
-
-    @font-face {
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 600;
-      font-display: swap;
-      src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_fjbvMwCp50PDca1ZL7.woff2) format('woff2');
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-    }
-
-    @font-face {
-      font-family: 'Libre Baskerville';
-      font-style: normal;
-      font-weight: 700;
-      font-display: swap;
-      src: url(https://fonts.gstatic.com/s/librebaskerville/v14/kmKiZrc3Hgbbcjq75U4uslyuy4kn0qviTgY3KcA.woff2) format('woff2');
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-    }
-
-    @media only screen and (max-width: 600px) {
-
-      .wrapper {
-        padding: 16px !important;
-      }
-
-      .content {
-        padding: 0 !important;
-      }
-
-      .container {
-        padding: 0 !important;
-        padding-top: 8px !important;
-        width: 100% !important;
-      }
-
-      .main {
-        border-left-width: 0 !important;
-        border-radius: 0 !important;
-        border-right-width: 0 !important;
-        border: 0 !important;
-      }
-
-      .btn table {
-        max-width: 100% !important;
-        width: 100% !important;
-      }
-
-      .btn a {
-        max-width: 100% !important;
-        width: 100% !important;
-      }
-    }
-
-    @media all {
-      .ExternalClass {
-        width: 100%;
-      }
-
-      .ExternalClass,
-      .ExternalClass p,
-      .ExternalClass span,
-      .ExternalClass font,
-      .ExternalClass td,
-      .ExternalClass div {
-        line-height: 100%;
-      }
-
-      .apple-link a {
-        color: inherit !important;
-        font-family: inherit !important;
-        font-size: inherit !important;
-        font-weight: inherit !important;
-        line-height: inherit !important;
-        text-decoration: none !important;
-      }
-
-      #MessageViewBody a {
-        color: inherit;
-        text-decoration: none;
-        font-size: inherit;
-        font-family: inherit;
-        font-weight: inherit;
-        line-height: inherit;
-      }
-    }
-
-    * {
-      text-decoration: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dito - Transcrição rápida com um toque humano</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body
-  style="font-family: Inter, Helvetica, sans-serif; -webkit-font-smoothing: antialiased; font-size: 16px; line-height: 1.3; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; background-color: #f4f5f6; margin: 0; padding: 0;">
-  <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body"
-    style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f4f5f6; width: 100%;"
-    width="100%" bgcolor="#f4f5f6">
-    <tr>
-      <td style="font-family: Inter, Helvetica, sans-serif; font-size: 16px; vertical-align: top;" valign="top">&nbsp;
-      </td>
-      <td class="container"
-        style="font-family: Inter, Helvetica, sans-serif; font-size: 16px; vertical-align: top; max-width: 600px; padding: 0; padding-top: 24px; padding-bottom: 24px; width: 600px; margin: 0 auto;"
-        width="600" valign="top">
-        <div class="content"
-          style="box-sizing: border-box; display: block; margin: 0 auto; max-width: 600px; padding: 0;">
-
-          <!-- START CENTERED WHITE CONTAINER -->
-          <span class="preheader"
-            style="color: transparent; display: none; height: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; mso-hide: all; visibility: hidden; width: 0;">Transcrição
-            rápida com um toque humano</span>
-          <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="main"
-            style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background: #ffffff; border: 1px solid #eaebed; border-radius: 16px; width: 100%;"
-            width="100%">
-
-            <!-- START MAIN CONTENT AREA -->
-            <tr>
-              <td class="wrapper"
-                style="font-family: Inter, Helvetica, sans-serif; font-size: 16px; vertical-align: top; box-sizing: border-box; padding: 24px; display: flex; flex-direction: column; align-items: center;"
-                valign="top">
-                <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary"
-                  style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: border-box; width: 100%; min-width: 100%; display: flex; justify-content: center; margin-bottom: 32px;"
-                  width="100%">
-                  <tbody>
-                    <tr>
-                      <td align="left"
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: 16px; vertical-align: top; display: flex; align-items: center;"
-                        valign="top">
-                        <table role="presentation" border="0" cellpadding="0" cellspacing="0"
-                          style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: auto;">
-                          <tbody>
-                            <tr>
-                              <h1
-                                style="font-family: Libre Baskerville, serif; font-size: clamp(2rem, 5vw, 2.5rem); font-weight: bold; margin: 0; text-align: center;">
-                                dito.</h1>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <img style="height: auto; width: 100%; margin-bottom: 32px;"
-                  src="https://raw.githubusercontent.com/LucasHamacek/dito/refs/heads/main/hand-typing-buttons-keyboard.png"
-                  alt="">
-                <h2
-                  style="font-family: Libre Baskerville, serif; font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: bold; margin: 0; text-align: center; margin-bottom: 32px;">
-                  O sucesso do seu vídeo está nos detalhes. Deixe suas transcrições
-                  impecáveis com o toque humano que
-                  elas merecem.
-                </h2>
-
-                <!-- ADD CONTENT CREATOR NAME -->
-                <h4
-                  style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(1.25rem, 3.5vw, 1.5rem); font-weight: 600; margin: 0; text-align: center; margin-bottom: 32px;">
-                  Olá [Nome do Criador de Conteúdo],</h4>
-
-                <!-- ADD VIDEO TITLE -->
-                <p
-                  style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(1rem, 2vw, 1.25rem); font-weight: 400; margin: 0; text-align: center; margin-bottom: 32px;">
-                  Meu nome é Lucas Hamacek, e acompanho o trabalho que você faz em seu canal no YouTube. Recentemente,
-                  preparei uma
-                  transcrição completa e revisada do seu vídeo “[Título do Vídeo]” como amostra do nosso serviço.</p>
-
-                <!-- ADD VIDEO LINK -->
-
-                <p
-                  style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: 300; margin: 0; text-align: center; margin-bottom: 16px; margin-top: 16px;">
-                  Para visualizar a legenda clique no ícone <span
-                    style="font-size: clamp(0.5rem, 1vw, 0.75rem); background-color: #212121; color: #ffffff; padding: 1px 3px; font-weight: 600; border-radius: 4px;">CC</span>
-                  na parte inferior do video.</p>
-                <p
-                  style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(1rem, 2vw, 1.25rem); font-weight: 400; margin: 0; text-align: center; margin-bottom: 32px; margin-top: 16px;">
-                  Queria compartilhar com você e mostrar como uma transcrição bem elaborada pode agregar valor aos
-                  seus
-                  vídeos. Espero que possa ser útil e que você veja como ela realça a qualidade do seu vídeo.</p>
-                <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary"
-                  style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: border-box; width: 100%; min-width: 100%; display: flex; justify-content: center;"
-                  width="100%">
-                  <tbody>
-                    <tr>
-                      <td align="left"
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: 16px; vertical-align: top; padding-bottom: 32px;"
-                        valign="top">
-                        <table role="presentation" border="0" cellpadding="0" cellspacing="0"
-                          style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: auto;">
-                          <tbody>
-                            <tr>
-                              <td
-                                style="font-family: Inter, Helvetica, sans-serif; vertical-align: top; border: 1px solid #111112; border-radius: 40px; text-align: center; background-color: #111112;"
-                                valign="top" align="center" bgcolor="#0867ec">
-
-                                <!-- ADD DOWNLOAD LINK -->
-                                <a href="" target="_blank"
-                                  style="border-radius: 40px; box-sizing: border-box; cursor: pointer; display: flex; align-items: center; font-size: clamp(0.825rem, 2vw, 1rem); font-weight: 400; margin: 0; padding: 8px 16px; text-decoration: none; text-transform: capitalize; background-color: #111112; color: #ffffff;">
-                                  Baixar transcrição* <svg xmlns="http://www.w3.org/2000/svg"
-                                    style="width: 18px; padding-left: 4px;" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="2" stroke="#ffffff" class="size-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                      d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                                  </svg></a>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <p
-                  style="font-family: Inter, Helvetica, sans-serif; font-size: 12px; font-weight: 300; color: #9ca3af; max-width: 400px; margin: 0; text-align: center; margin-bottom: 32px;">
-                  *As transcrições são fornecidas em arquivos .srt, compatíveis com diversas plataformas de vídeo do
-                  mercado, incluindo o YouTube.</p>
-                <hr style="width: 100%; border: 0; border-top: 1px solid #d1d5db;">
-                <h3
-                  style="font-family: 'Libre Baskerville', serif; font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: bold; max-width: 400px; margin: 0; text-align: center; margin-top: 32px; margin-bottom: 16px;">
-                  Descubra as vantagens de fazer sua transcrição com a <span
-                    style="font-family: Libre Baskerville, serif; font-size: clamp(2rem, 5vw, 2.5rem); font-weight: bold; text-decoration: none; border-bottom: 5px solid #ffb9c7;">dito</span>.
-                </h3>
-                <p
-                  style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(1rem, 2vw, 1.25rem); font-weight: 400; max-width: 400px; margin: 0; text-align: center; margin-bottom: 32px;">
-                  Diferenças entre a transcrição automática do YouTube e nossa versão IA com um toque humano:</p>
-                <table role="presentation" border="0" cellpadding="0" cellspacing="0"
-                  style="width: 100%; border-collapse: collapse; border-radius: 4px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin-top: 32px; margin-bottom: 32px; padding: 4px;">
-                  <thead>
-                    <tr>
-                      <th
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: normal; padding: 8px; text-align: center;">
-                      </th>
-                      <th
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: normal; border: 1px solid #d1d5db; padding: 8px; text-align: center; background-color: #fee2e2;">
-                        Humana + IA (dito)</th>
-                      <th
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: normal; border: 1px solid #d1d5db; padding: 8px; text-align: center;">
-                        Automática (YouTube)</th>
-                    </tr>
-                  </thead>
-                  <thead>
-                    <tr>
-                      <th colspan="3"
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: 500; border: 1px solid #d1d5db; padding: 4px; text-align: center; background-color: #f3f4f6;">
-                        Principais diferenças</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: 600; border: 1px solid #d1d5db; border-bottom: none; padding: 8px; text-align: center;">
-                        Precisão</td>
-                      <td
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: normal; padding: 8px; text-align: center; background-color: #fee2e2;">
-                        Altíssima (95%+), com revisão humana para máxima qualidade.</td>
-                      <td
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: normal; border: 1px solid #d1d5db; border-bottom: none; padding: 8px; text-align: center;">
-                        Baixa a moderada (60-80%), depende da qualidade do áudio.</td>
-                    </tr>
-                    <tr>
-                      <td
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: 600; border-left: 1px solid #d1d5db; border-right: 1px solid #d1d5db; padding: 8px; text-align: center; background-color: #f3f4f6;">
-                        Compreensão de contexto</td>
-                      <td
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: normal; padding: 8px; text-align: center; background-color: #fee2e2;">
-                        Correção com IA seguida por ajustes manuais para sentido e coesão.</td>
-                      <td
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: normal; border-left: 1px solid #d1d5db; border-right: 1px solid #d1d5db; padding: 8px; text-align: center; background-color: #f3f4f6;">
-                        Fraca, analisa palavra por palavra.</td>
-                    </tr>
-                    <tr>
-                      <td
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: 600; border-left: 1px solid #d1d5db; border-right: 1px solid #d1d5db; padding: 8px; text-align: center;">
-                        Pontuação e gramática</td>
-                      <td
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: normal; padding: 8px; text-align: center; background-color: #fee2e2;">
-                        IA ajusta a pontuação, revisão humana garante precisão.</td>
-                      <td
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: normal; border-left: 1px solid #d1d5db; border-right: 1px solid #d1d5db; padding: 8px; text-align: center;">
-                        Limitada, frequentemente sem pontuação adequada.</td>
-                    </tr>
-                    <tr>
-                      <td
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: 600; border-left: 1px solid #d1d5db; border-right: 1px solid #d1d5db; padding: 8px; text-align: center; background-color: #f3f4f6;">
-                        Termos técnicos/Nomes próprios</td>
-                      <td
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: normal; padding: 8px; text-align: center; background-color: #fee2e2;">
-                        Alta precisão, com pesquisa se necessário.</td>
-                      <td
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: normal; border-left: 1px solid #d1d5db; border-right: 1px solid #d1d5db; padding: 8px; text-align: center; background-color: #f3f4f6;">
-                        Frequentemente errados.</td>
-                    </tr>
-                    <tr>
-                      <td
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: 600; border-left: 1px solid #d1d5db; border-right: 1px solid #d1d5db; padding: 8px; text-align: center;">
-                        Sotaques e dialetos</td>
-                      <td
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: normal; padding: 8px; text-align: center; background-color: #fee2e2;">
-                        Alta adaptabilidade.</td>
-                      <td
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: normal; border-left: 1px solid #d1d5db; border-right: 1px solid #d1d5db; padding: 8px; text-align: center;">
-                        Grande dificuldade com sotaques fortes.</td>
-                    </tr>
-                    <tr>
-                      <td
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: 600; border-left: 1px solid #d1d5db; border-right: 1px solid #d1d5db; padding: 8px; text-align: center; background-color: #f3f4f6;">
-                        Adaptação a padrões</td>
-                      <td
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: normal; padding: 8px; text-align: center; background-color: #fee2e2;">
-                        Seguem padrões específicos de caracteres por linha e grupos de linhas.</td>
-                      <td
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: normal; border-left: 1px solid #d1d5db; border-right: 1px solid #d1d5db; padding: 8px; text-align: center; background-color: #f3f4f6;">
-                        Sem formatação adequada ou padronização.</td>
-                    </tr>
-                    <tr>
-                      <td
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: 600; border-left: 1px solid #d1d5db; border-right: 1px solid #d1d5db; padding: 8px; text-align: center;">
-                        Sincronização com o áudio</td>
-                      <td
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: normal; padding: 8px; text-align: center; background-color: #fee2e2;">
-                        Sincronização manual para perfeita correspondência com o vídeo.</td>
-                      <td
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: normal; border-left: 1px solid #d1d5db; border-right: 1px solid #d1d5db; padding: 8px; text-align: center;">
-                        Muitas vezes desalinhada com o áudio.</td>
-                    </tr>
-                    <tr>
-                      <td
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: 600; border-left: 1px solid #d1d5db; border-right: 1px solid #d1d5db; padding: 8px; text-align: center; background-color: #f3f4f6;">
-                        Custo</td>
-                      <td
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: normal; padding: 8px; text-align: center; background-color: #fee2e2;">
-                        Justificado pelo alto nível de qualidade entregue.</td>
-                      <td
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: normal; border-left: 1px solid #d1d5db; border-right: 1px solid #d1d5db; padding: 8px; text-align: center; background-color: #f3f4f6;">
-                        Gratuito no YouTube.</td>
-                    </tr>
-                    <tr>
-                      <td
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: 600; border-left: 1px solid #d1d5db; border-right: 1px solid #d1d5db; padding: 8px; text-align: center;">
-                        Tempo de entrega</td>
-                      <td
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: normal; padding: 8px; text-align: center; background-color: #fee2e2;">
-                        Moderado, balanceando qualidade e velocidade.</td>
-                      <td
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: normal; border-left: 1px solid #d1d5db; border-right: 1px solid #d1d5db; padding: 8px; text-align: center;">
-                        Instantâneo, mas com baixa qualidade.</td>
-                    </tr>
-                    <tr>
-                      <td
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: 600; border-left: 1px solid #d1d5db; border-right: 1px solid #d1d5db; padding: 8px; text-align: center; background-color: #f3f4f6;">
-                        Revisão e qualidade final</td>
-                      <td
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: normal; padding: 8px; text-align: center; background-color: #fee2e2;">
-                        Revisada manualmente, alta qualidade.</td>
-                      <td
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: normal; border-left: 1px solid #d1d5db; border-right: 1px solid #d1d5db; padding: 8px; text-align: center; background-color: #f3f4f6;">
-                        Sem revisão.</td>
-                    </tr>
-                    <tr>
-                      <td
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: 600; border: 1px solid #d1d5db; border-top: none; padding: 8px; text-align: center;">
-                        Referências e guias</td>
-                      <td
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: normal; padding: 8px; text-align: center; border-bottom: 1px solid #d1d5db; background-color: #fee2e2;">
-                        Baseado no guia TED Translators** para garantir padrões globais de qualidade.</td>
-                      <td
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: normal; border: 1px solid #d1d5db; border-top: none; padding: 8px; text-align: center;">
-                        Sem referência a padrões específicos.</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <p
-                  style="font-family: Inter, Helvetica, sans-serif; font-size: 12px; font-weight: 300; color: #9ca3af; margin: 0; text-align: center; margin-bottom: 32px;">
-                  **Utilizamos o guia TED Translators como referência porque ele é reconhecido mundialmente por suas
-                  diretrizes claras e eficientes. Isso garante que suas legendas não apenas sigam padrões globais, mas
-                  também proporcionem uma experiência de alta qualidade para seu público.</p>
-                <hr style="width: 100%; border: 0; border-top: 1px solid #d1d5db;">
-                <h3
-                  style="font-family: 'Libre Baskerville', serif; font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: bold; max-width: 400px; margin: 0; text-align: center; margin-top: 32px; margin-bottom: 16px;">
-                  Transforme a experiência do seu público!</h3>
-                <p
-                  style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(1rem, 2vw, 1.25rem); font-weight: 400; max-width: 400px; margin: 0; text-align: center; margin-bottom: 32px;">
-                  Confira alguns dos padrões que seguimos em nossas transcrições para manter a fluidez da leitura e
-                  evitar distrações para o leitor:</p>
-                <ul style="list-style-type: none; padding: 0;">
-                  <li
-                    style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(1rem, 2vw, 1.25rem); font-weight: 400; margin: 0; margin-bottom: 16px; display: flex; align-items: center;">
-                    <span style="padding-right: 8px;"><img style="width: 20px; height: 20px;"
-                        src="https://raw.githubusercontent.com/LucasHamacek/dito/refs/heads/main/check-circle-fill.svg"
-                        alt=""></span>
-                    A legenda respeita um limite de 42 caracteres por linha e uma linha não deve ser menor que 50%
-                    da outra.
-                  </li>
-                  <li
-                    style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(1rem, 2vw, 1.25rem); font-weight: 400; margin: 0; margin-bottom: 16px; display: flex; align-items: center;">
-                    <span style="padding-right: 8px;"><img style="width: 20px; height: 20px;"
-                        src="https://raw.githubusercontent.com/LucasHamacek/dito/refs/heads/main/check-circle-fill.svg"
-                        alt=""></span>
-                    O tempo de exposição das legendas é de no mínimo 1s e máximo 7s.
-                  </li>
-                  <li
-                    style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(1rem, 2vw, 1.25rem); font-weight: 400; margin: 0; margin-bottom: 16px; display: flex; align-items: center;">
-                    <span style="padding-right: 8px;"><img style="width: 20px; height: 20px;"
-                        src="https://raw.githubusercontent.com/LucasHamacek/dito/refs/heads/main/check-circle-fill.svg"
-                        alt=""></span>
-                    Cada nova frase começa em uma nova legenda.
-                  </li>
-                  <li
-                    style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(1rem, 2vw, 1.25rem); font-weight: 400; margin: 0; margin-bottom: 16px; display: flex; align-items: center;">
-                    <span style="padding-right: 8px;"><img style="width: 20px; height: 20px;"
-                        src="https://raw.githubusercontent.com/LucasHamacek/dito/refs/heads/main/check-circle-fill.svg"
-                        alt=""></span>
-                    Números de zero a dez são escritos por extenso e, acima disso, são usados algarismos.
-                  </li>
-                  <li
-                    style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(1rem, 2vw, 1.25rem); font-weight: 400; margin: 0; margin-bottom: 32px; display: flex; align-items: center;">
-                    <span style="padding-right: 8px;"><img style="width: 20px; height: 20px;"
-                        src="https://raw.githubusercontent.com/LucasHamacek/dito/refs/heads/main/check-circle-fill.svg"
-                        alt=""></span>
-                    Em citações, as sentenças são colocadas entre aspas.
-                  </li>
-                </ul>
-                <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary"
-                  style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: border-box; width: 100%; min-width: 100%; display: flex; justify-content: center;"
-                  width="100%">
-                  <tbody>
-                    <tr>
-                      <td style="display: flex; flex-wrap: wrap; justify-content: center; margin-bottom: 32px;">
-                        <p
-                          style="font-family: Inter, Helvetica, sans-serif; width: fit-content; box-sizing: border-box; display: flex; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: normal; margin: 8px; padding: 10px; border-radius: 10px; text-align: center; background-color: #000000bb; color: #ffffff;">
-                          Era para eu estar no Reels às 3h da<br>tarde numa terça-feira, faz sentido?</p>
-                        <p
-                          style="font-family: Inter, Helvetica, sans-serif; width: fit-content; box-sizing: border-box; display: flex; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: normal; margin: 8px; padding: 10px; border-radius: 10px; text-align: center; background-color: #000000bb; color: #ffffff;">
-                          O VO2 máximo vai ajudar muito sua<br>saúde mental e a memória de trabalho.</p>
-                        <p
-                          style="font-family: Inter, Helvetica, sans-serif; width: fit-content; box-sizing: border-box; display: flex; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: normal; margin: 8px; padding: 10px; border-radius: 10px; text-align: center; background-color: #000000bb; color: #ffffff;">
-                          Quando eu leio essa passagem, penso<br>que é algo como Jesus chegando.</p>
-                        <p
-                          style="font-family: Inter, Helvetica, sans-serif; width: fit-content; box-sizing: border-box; display: flex; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: normal; margin: 8px; padding: 10px; border-radius: 10px; text-align: center; background-color: #000000bb; color: #ffffff;">
-                          Bom, vou fazer uma versão simples,<br>sem complicações para vocês. </p>
-                        <p
-                          style="font-family: Inter, Helvetica, sans-serif; width: fit-content; box-sizing: border-box; display: flex; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: normal; margin: 8px; padding: 10px; border-radius: 10px; text-align: center; background-color: #000000bb; color: #ffffff;">
-                          fazer toda a diferença num período<br>de cinco, seis ou dez anos. </p>
-                        <p
-                          style="font-family: Inter, Helvetica, sans-serif; width: fit-content; box-sizing: border-box; display: flex; font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: normal; margin: 8px; padding: 10px; border-radius: 10px; text-align: center; background-color: #000000bb; color: #ffffff;">
-                          bem assim: "Eu quero saber aonde vou<br>morrer, porque assim eu não vou até lá". </p>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <hr style="width: 100%; border: 0; border-top: 1px solid #d1d5db;">
-                <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary"
-                  style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: border-box; width: 100%; min-width: 100%; display: flex; justify-content: center;"
-                  width="100%">
-                  <tbody>
-                    <h3
-                      style="font-family: 'Libre Baskerville', serif; font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: bold; max-width: 400px; margin: 0; text-align: center; margin-top: 32px; margin-bottom: 16px;">
-                      Experimente nosso serviço com <span
-                        style="text-decoration: none; border-bottom: 5px solid #ffb9c7;">30% de desconto</span>!</h3>
-                    <p
-                      style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(1rem, 2vw, 1.25rem); font-weight: 400; max-width: 320px; margin: 0; text-align: center; margin-bottom: 16px;">
-                      Deixe seus vídeos ainda mais incríveis sem gastar muito.</p>
-                    <tr
-                      style="display: flex; flex-wrap: wrap; justify-content: center; margin-bottom: 32px; margin-top: 32px; max-width: 328px;">
-                      <td
-                        style="display: flex; flex-direction: column; gap: 16px; border: solid 1px #eaebed; padding: 32px; box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;">
-                        <h4
-                          style="font-family: 'Libre Baskerville', serif; box-sizing: border-box; font-size: clamp(1.5rem, 3.5vw, 1.75rem); font-weight: normal; margin: 0px; padding: 0px;">
-                          Um locutor</h4>
-                        <p
-                          style="font-family: Inter, Helvetica, sans-serif; box-sizing: border-box; font-size: font-size: clamp(1rem, 2vw, 1.25rem); font-weight: normal; color: #9ca3af; margin: 0px; padding: 0px;">
-                          Promoção exclusiva para criadores do YouTube.</p>
-                        <div>
-                          <p
-                            style="font-family: Inter, Helvetica, sans-serif; box-sizing: border-box; font-size: font-size: clamp(1rem, 2vw, 1.25rem); font-weight: normal; margin: 0px; padding: 0px;">
-                            A partir de</p>
-                          <p
-                            style="font-family: Inter, Helvetica, sans-serif; box-sizing: border-box; font-size: font-size: clamp(1rem, 2vw, 1.25rem); font-weight: normal; margin: 0px; padding: 0px;">
-                            <span
-                              style="font-family: 'Libre Baskerville', serif; font-size: clamp(1rem, 2vw, 1.25rem); text-decoration: line-through; color: #9ca3af;">11,90</span>
-                            por <span
-                              style="font-family: 'Libre Baskerville', serif; font-size: clamp(1.5rem, 3.5vw, 1.75rem);">7,90</span>/min
-                            de vídeo.
-                          </p>
-                        </div>
-                        <div>
-                          <p
-                            style="font-family: Inter, Helvetica, sans-serif; box-sizing: border-box; font-size: 12px; font-weight: 300; color: #9ca3af; margin: 0px; padding: 0px;">
-                            1. Os valores podem sofrer alterações sem aviso.</p>
-                          <p
-                            style="font-family: Inter, Helvetica, sans-serif; box-sizing: border-box; font-size: 12px; font-weight: 300; color: #9ca3af; margin: 0px; padding: 0px;">
-                            2. Para mais de um locutor, consulte os preços <a href="https://wa.me/553199305744"
-                              target="_blank" style="text-decoration: underline; color: #111112;">aqui</a>.</p>
-                          <p
-                            style="font-family: Inter, Helvetica, sans-serif; box-sizing: border-box; font-size: 12px; font-weight: 300; color: #9ca3af; margin: 0px; padding: 0px;">
-                            3. Se não estiver satisfeito com o serviço, solicite seu reembolso em até sete dias após o
-                            recebimento.</p>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <hr style="width: 100%; border: 0; border-top: 1px solid #d1d5db;">
-                <h3
-                  style="font-family: 'Libre Baskerville', serif; font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: bold; margin: 0; text-align: center; margin-top: 32px; margin-bottom: 16px;">
-                  Obrigado!</h3>
-                <p
-                  style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(1rem, 2vw, 1.25rem); font-weight: normal; margin: 0; text-align: center; margin-bottom: 32px;">
-                  Agradeço pelo seu tempo e espero<br>que goste do material!</p>
-                <img style="width: 124px; height: auto; border-radius: 62px; margin-bottom: 16px;"
-                  src="https://raw.githubusercontent.com/LucasHamacek/dito/refs/heads/main/AHCRE9878.JPG" alt="">
-                <p
-                  style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(1rem, 2vw, 1.25rem); font-weight: 500; margin: 0; text-align: center; margin-bottom: 8px;">
-                  Lucas Hamacek</p>
-                <p
-                  style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(1rem, 2vw, 1.25rem); font-weight: normal; color: #9ca3af; margin: 0; text-align: center; margin-bottom: 32px;">
-                  Transcritor</p>
-                <p
-                  style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(1rem, 2vw, 1.25rem); font-weight: 400; margin: 0; text-align: center; margin-bottom: 32px;">
-                  Estou à disposição para conversar sobre como posso ajudar a elevar o padrão de seus vídeos com esse
-                  serviço.</p>
-                <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary"
-                  style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: border-box; width: 100%; min-width: 100%; display: flex; justify-content: center;"
-                  width="100%">
-                  <tbody>
-                    <tr>
-                      <td align="left"
-                        style="font-family: Inter, Helvetica, sans-serif; font-size: clamp(1rem, 2vw, 1.25rem); vertical-align: top; padding-bottom: 32px;"
-                        valign="top">
-                        <table role="presentation" border="0" cellpadding="0" cellspacing="0"
-                          style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: auto;">
-                          <tbody>
-                            <tr>
-                              <td
-                                style="font-family: Inter, Helvetica, sans-serif; vertical-align: top; border: 1px solid #111112; border-radius: 40px; text-align: center; background-color: #111112;"
-                                valign="top" align="center" bgcolor="#0867ec">
-                                <a href="https://wa.me/553199305744" target="_blank"
-                                  style="border-radius: 40px; box-sizing: border-box; cursor: pointer; display: flex; align-items: center; font-size: clamp(0.825rem, 2vw, 1rem); font-weight: 400; margin: 0; padding: 8px 16px; text-decoration: none; text-transform: capitalize; background-color: #111112; color: #ffffff;">
-                                  WhatsApp <svg xmlns="http://www.w3.org/2000/svg"
-                                    style="width: 18px; padding-left: 4px;" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="2" stroke="#ffffff" class="size-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                      d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 0 1-.923 1.785A5.969 5.969 0 0 0 6 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337Z" />
-                                  </svg>
-                                </a>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </td>
-            </tr>
-
-            <!-- END MAIN CONTENT AREA -->
-          </table>
-
-          <!-- START FOOTER -->
-          <p class="copyright"
-            style="font-family: Inter, Helvetica, sans-serif; font-size: 12px; font-weight: normal; color: #9ca3af; margin: 0; text-align: center; margin-bottom: 32px; margin-top: 32px;">
-            2024-2025 dito.
-          </p>
-          <!-- END FOOTER -->
-
-          <!-- END CENTERED WHITE CONTAINER -->
+<body class="bg-gray-100">
+    <header class="flex flex-col items-center w-full">
+        <nav class="flex w-full justify-between max-w-2xl py-2 px-4">
+            <h1 class="font-medium text-2xl md:text-3xl text-center antialiased">dito.</h1>
+        </nav>
+        <img class="flex w-full max-w-2xl px-4"
+            src="https://raw.githubusercontent.com/LucasHamacek/dito/refs/heads/main/hand-typing-buttons-keyboard.png"
+            alt="hand-typing">
+        <div class="flex w-full justify-center max-w-2xl py-4 px-4">
+            <h2 class="font-medium text-3xl md:text-4xl text-center antialiased">O sucesso do seu vídeo
+                está nos
+                detalhes. Deixe suas transcrições impecáveis com o toque humano que elas merecem.</h2>
         </div>
-      </td>
-      <td style="font-family: Inter, Helvetica, sans-serif; font-size: 16px; vertical-align: top;" valign="top">&nbsp;
-      </td>
-    </tr>
-  </table>
-  <script type="text/javascript" src="https://amara.org/embedder-iframe"></script>
+    </header>
+    <main>
+        <section class="flex flex-col items-center w-full">
+            <!-- ADD CONTENT CREATOR NAME -->
+            <div class="flex w-full justify-center max-w-2xl py-4 px-4">
+                <h3 class="font-medium text-xl md:text-2xl text-center antialiased">Olá [Nome do Criador de Conteúdo],
+                </h3>
+            </div>
+            <!-- ADD VIDEO TITLE -->
+            <div class="flex w-full justify-center max-w-2xl py-4 px-4">
+                <p class="text-base md:text-lg text-center antialiased">Meu nome é Lucas Hamacek, e acompanho o trabalho
+                    que você faz em seu canal no YouTube. Recentemente,
+                    preparei uma transcrição completa e revisada do seu vídeo “[Título do Vídeo]” como amostra do nosso
+                    serviço.</p>
+            </div>
+            <!-- ADD VIDEO LINK -->
+            <div class="flex w-full justify-center max-w-2xl py-4 px-4">
+                <p class="text-sm text-center font-light antialiased">Para visualizar a legenda clique no ícone <span
+                        class="text-sm font-medium text-white tracking-widest px-1 rounded-[4px] bg-black">CC</span> na
+                    parte inferior do video.</p>
+            </div>
+            <div class="flex w-full justify-center max-w-2xl py-4 px-4">
+                <p class="text-base md:text-lg text-center antialiased">Queria compartilhar com você e mostrar como uma
+                    transcrição bem elaborada pode agregar valor aos seus
+                    vídeos. Espero que possa ser útil e que você veja como ela realça a qualidade do seu vídeo.</p>
+            </div>
+            <!-- ADD DOWNLOAD LINK -->
+            <a href=""><button class="text-sm md:text-base text-white w-fit bg-black px-4 py-2 rounded-full">Baixar
+                transcrição*</button></a>
+            <div class="flex w-full justify-center max-w-2xl py-4 px-4">
+                <p class="text-sm text-center text-gray-400 font-light antialiased">*As transcrições são fornecidas em
+                    arquivos
+                    .srt, compatíveis com diversas plataformas de vídeo do
+                    mercado, incluindo o YouTube.</p>
+            </div>
+        </section>
+        <div class="flex flex-col items-center w-full px-4 py-6">
+            <hr class="w-full max-w-2xl border-t border-gray-300">
+        </div>
+        <section class="flex flex-col items-center w-full">
+            <div class="flex flex-col w-full justify-center max-w-2xl py-4 px-4 gap-4">
+                <h3 class="font-medium text-3xl md:text-4xl text-center antialiased">Descubra as vantagens
+                    de fazer sua
+                    transcrição com a <span class="border-b-[5px] border-[#ffb9c7]">dito</span>.
+                </h3>
+                <p class="text-base md:text-lg text-center antialiased">Diferenças entre a transcrição automática do
+                    YouTube e nossa versão IA com um toque humano:</p>
+            </div>
+            <div class="px-4 py-8">
+                <table class="text-xs md:text-sm table-auto border-collapse max-w-2xl">
+                    <thead>
+                        <tr>
+                            <th class=""></th>
+                            <th class="border border-gray-300 p-2 bg-[#fee2e2]">
+                                Humana + IA (dito)</th>
+                            <th class="border border-gray-300 p-2 bg-white">
+                                Automática (YouTube)</th>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr class="border border-gray-300">
+                            <th></th>
+                            <th class="text-center col-span-3 p-1">
+                                Principais diferenças</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center font-medium border-l border-gray-300 p-2 bg-white">
+                                Precisão</td>
+                            <td class="text-center border-x border-gray-300 p-2 bg-[#fee2e2]">
+                                Altíssima (95%+), com revisão humana para máxima qualidade.</td>
+                            <td class="text-center border-r border-gray-300 p-2 bg-white">
+                                Baixa a moderada (60-80%), depende da qualidade do áudio.</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center font-medium border-l border-gray-300 p-2">
+                                Compreensão de contexto</td>
+                            <td class="text-center border-x border-gray-300 p-2 bg-[#fee2e2]">
+                                Correção com IA seguida por ajustes manuais para sentido e coesão.</td>
+                            <td class="text-center border-r border-gray-300 p-2">
+                                Fraca, analisa palavra por palavra.</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center font-medium border-l border-gray-300 p-2 bg-white">
+                                Pontuação e gramática</td>
+                            <td class="text-center border-x border-gray-300 p-2 bg-[#fee2e2]">
+                                IA ajusta a pontuação, revisão humana garante precisão.</td>
+                            <td class="text-center border-r border-gray-300 p-2 bg-white">
+                                Limitada, frequentemente sem pontuação adequada.</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center font-medium border-l border-gray-300 p-2">
+                                Termos técnicos/Nomes próprios</td>
+                            <td class="text-center border-x border-gray-300 p-2 bg-[#fee2e2]">
+                                Alta precisão, com pesquisa se necessário.</td>
+                            <td class="text-center border-r border-gray-300 p-2">
+                                Frequentemente errados.</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center font-medium border-l border-gray-300 p-2 bg-white">
+                                Sotaques e dialetos</td>
+                            <td class="text-center border-x border-gray-300 p-2 bg-[#fee2e2]">
+                                Alta adaptabilidade.</td>
+                            <td class="text-center border-r border-gray-300 p-2 bg-white">
+                                Grande dificuldade com sotaques fortes.</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center font-medium border-l border-gray-300 p-2">
+                                Adaptação a padrões</td>
+                            <td class="text-center border-x border-gray-300 p-2 bg-[#fee2e2]">
+                                Seguem padrões específicos de caracteres por linha e grupos de linhas.</td>
+                            <td class="text-center border-r border-gray-300 p-2">
+                                Sem formatação adequada ou padronização.</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center font-medium border-l border-gray-300 p-2 bg-white">
+                                Sincronização com o áudio</td>
+                            <td class="text-center border-x border-gray-300 p-2 bg-[#fee2e2]">
+                                Sincronização manual para perfeita correspondência com o vídeo.</td>
+                            <td class="text-center border-r border-gray-300 p-2 bg-white">
+                                Muitas vezes desalinhada com o áudio.</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center font-medium border-l border-gray-300 p-2">
+                                Custo</td>
+                            <td class="text-center border-x border-gray-300 p-2 bg-[#fee2e2]">
+                                Justificado pelo alto nível de qualidade entregue.</td>
+                            <td class="text-center border-r border-gray-300 p-2">
+                                Gratuito no YouTube.</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center font-medium border-l border-gray-300 p-2 bg-white">
+                                Tempo de entrega</td>
+                            <td class="text-center border-x border-gray-300 p-2 bg-[#fee2e2]">
+                                Moderado, balanceando qualidade e velocidade.</td>
+                            <td class="text-center border-r border-gray-300 p-2 bg-white">
+                                Instantâneo, mas com baixa qualidade.</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center font-medium border-l border-gray-300 p-2">
+                                Revisão e qualidade final</td>
+                            <td class="text-center border-x border-gray-300 p-2 bg-[#fee2e2]">
+                                Revisada manualmente, alta qualidade.</td>
+                            <td class="text-center border-r border-gray-300 p-2">
+                                Sem revisão.</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center font-medium border-l border-b border-gray-300 p-2 bg-white">
+                                Referências e guias</td>
+                            <td class="text-center border-x border-b border-gray-300 p-2 bg-[#fee2e2]">
+                                Baseado no guia TED Translators** para garantir padrões globais de qualidade.</td>
+                            <td class="text-center border-r border-b border-gray-300 p-2 bg-white">
+                                Sem referência a padrões específicos.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="flex flex-col w-full justify-center max-w-2xl py-4 px-4 gap-4">
+                    <p class="text-sm text-center text-gray-400 font-light antialiased">**Utilizamos o guia TED
+                        Translators como
+                        referência porque ele é reconhecido mundialmente por suas diretrizes claras e eficientes. Isso
+                        garante que suas legendas não apenas sigam padrões globais, mas também proporcionem uma
+                        experiência de alta qualidade para seu público.</p>
+                </div>
+            </div>
+        </section>
+        <div class="flex flex-col items-center w-full px-4 py-6">
+            <hr class="w-full max-w-2xl border-t border-gray-300">
+        </div>
+        <section class="flex flex-col items-center w-full">
+            <div class="flex flex-col w-full justify-center max-w-2xl py-4 px-4 gap-4">
+                <h3 class="font-medium text-3xl md:text-4xl text-center antialiased">Transforme a experiência do seu
+                    público!
+                </h3>
+                <p class="text-base md:text-lg text-center antialiased">Confira alguns dos padrões que seguimos em
+                    nossas transcrições para manter a fluidez da leitura e evitar distrações para o leitor:</p>
+            </div>
+            <div class="flex flex-col w-full justify-center max-w-2xl py-4 px-4">
+                <ul class="flex flex-col list-inside leading-6 pl-2 gap-4">
+                    <li
+                        class="text-base md:text-lg antialiased relative pl-8 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-6 before:h-6 before:bg-[url(https://raw.githubusercontent.com/LucasHamacek/dito/refs/heads/main/check-circle-fill.svg)] before:bg-contain">
+                        A legenda respeita um limite de 42 caracteres por linha e uma linha não deve ser menor que 50%
+                        da outra.
+                    </li>
+                    <li
+                        class="text-base md:text-lg antialiased relative pl-8 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-6 before:h-6 before:bg-[url(https://raw.githubusercontent.com/LucasHamacek/dito/refs/heads/main/check-circle-fill.svg)] before:bg-contain">
+                        O tempo de exposição das legendas é de no mínimo 1s e máximo 7s.
+                    </li>
+                    <li
+                        class="text-base md:text-lg antialiased relative pl-8 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-6 before:h-6 before:bg-[url(https://raw.githubusercontent.com/LucasHamacek/dito/refs/heads/main/check-circle-fill.svg)] before:bg-contain">
+                        Cada nova frase começa em uma nova legenda.
+                    </li>
+                    <li
+                        class="text-base md:text-lg antialiased relative pl-8 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-6 before:h-6 before:bg-[url(https://raw.githubusercontent.com/LucasHamacek/dito/refs/heads/main/check-circle-fill.svg)] before:bg-contain">
+                        Números de zero a dez são escritos por extenso e, acima disso, são usados algarismos.
+                    </li>
+                    <li
+                        class="text-base md:text-lg antialiased relative pl-8 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-6 before:h-6 before:bg-[url(https://raw.githubusercontent.com/LucasHamacek/dito/refs/heads/main/check-circle-fill.svg)] before:bg-contain">
+                        Em citações, as sentenças são colocadas entre aspas.
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <div class="flex flex-col items-center w-full px-4 py-6">
+            <hr class="w-full max-w-2xl border-t border-gray-300">
+        </div>
+        <section class="flex flex-col items-center w-full">
+            <div class="flex flex-col w-full justify-center max-w-2xl py-4 px-4 gap-4">
+                <h3 class="font-medium text-3xl md:text-4xl text-center antialiased">Experimente nosso serviço com <span
+                        class="border-b-[5px] border-[#ffb9c7]">30% de desconto</span>!
+                </h3>
+                <p class="text-base md:text-lg text-center antialiased">Deixe seus vídeos ainda mais incríveis sem
+                    gastar muito.</p>
+            </div>
+            <div class="flex flex-col w-full items-center max-w-2xl py-4 px-4">
+                <div class="flex flex-col w-full max-w-xs py-8 px-8 gap-4 bg-white shadow-xl">
+                    <div class="flex flex-col gap-1">
+                        <h4 class="text-2xl md:text-3xl font-medium antialiased">Um locutor</h4>
+                        <p class="text-base md:text-lg text-gray-400 antialiased">Promoção exclusiva para criadores do
+                            YouTube.</p>
+                    </div>
+                    <div>
+                        <p class="text-base md:text-lg antialiased">A partir de</p>
+                        <p class="text-base md:text-lg antialiased"><span
+                                class="text-2xl md:text-3xl text-gray-400 font-medium line-through">11,90</span> por
+                            <span class="text-3xl md:text-4xl font-medium">7,90</span>/min de vídeo.
+                        </p>
+                    </div>
+                    <a href="#contact"><button class="text-sm md:text-base text-white w-full bg-black px-4 py-2 rounded-full">Contratar</button></a>
+                    <div class="font-light">
+                        <p class="text-sm text-gray-400 antialiased">1. Os valores podem sofrer alterações sem aviso.
+                        </p>
+                        <p class="text-sm text-gray-400 antialiased">2. Para mais de um locutor, consulte os preços.</p>
+                        <p class="text-sm text-gray-400 antialiased">3. Se não estiver satisfeito com o serviço,
+                            solicite seu reembolso em até sete dias após o
+                            recebimento.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="flex flex-col items-center w-full px-4 py-6">
+            <hr class="w-full max-w-2xl border-t border-gray-300">
+        </div>
+        <section id="contact" class="flex flex-col items-center w-full">
+            <div class="flex flex-col w-full justify-center max-w-2xl py-4 px-4 gap-4">
+                <h3 class="font-medium text-3xl md:text-4xl text-center antialiased">Obrigado!</h3>
+                <p class="text-base md:text-lg text-center antialiased">Agradeço pelo seu tempo e espero que goste do
+                    material!</p>
+            </div>
+            <img class="flex w-full max-w-[128px] rounded-full"
+                src="https://raw.githubusercontent.com/LucasHamacek/dito/refs/heads/main/AHCRE9878.JPG"
+                alt="transcriber's photo">
+            <div class="flex flex-col w-full max-w-2xl py-4 px-4">
+                <h4 class="text-lg md:text-xl text-center font-medium  antialiased">Lucas Hamacek</h4>
+                <p class="text-base md:text-lg text-center text-gray-400 antialiased">Transcritor</p>
+            </div>
+            <div class="flex gap-4">
+                <div><a href="https://wa.me/553199305744" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                    <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                  </svg></a></div>
+                  <div><a href="https://www.instagram.com/lucashamacek/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                  </svg></a></div>
+            </div>
+        </section>
+    </main>
+    <div class="flex flex-col items-center w-full px-4 py-6">
+        <hr class="w-full max-w-2xl border-t border-gray-300">
+    </div>
+    <footer>
+        <p class="text-sm text-center text-gray-400 font-light pb-4 antialiased">2024-2025 dito.</p>
+    </footer>
+    <script type="text/javascript" src="https://amara.org/embedder-iframe"></script>
 </body>
 
 </html>
